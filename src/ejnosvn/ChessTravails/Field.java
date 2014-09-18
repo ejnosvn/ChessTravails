@@ -1,29 +1,38 @@
 package ejnosvn.ChessTravails;
 
 public class Field {
-	int i = -1;
-	int j = -1;
-	int value;   //1.. hanyadik lepesben elerheto
-	boolean endField = false;
+	int column = -1;
+	int row = -1;
+	int reachedInStepNumber = -1;
+	private boolean isEndField = false;
+	public final static int BLOCKED = 32000;
+	public final static int NOT_VISITED = -1;
+	public final static int START = 0;
 	
-	public Field(int i, int j, int value) {
-		this.i = i;
-		this.j = j;
-		this.value = value;
+	public Field(int column, int row, int reachedInStepNumber) {
+		this.column = column;
+		this.row = row;
+		this.reachedInStepNumber = reachedInStepNumber;
 	}
 	
 	public String toString(){
-		return "" + Character.toString(Character.toChars(i+65)[0]) + "" + (j+1);
-		
+		return "" + Character.toString(Character.toChars(column+65)[0]) + "" + (row+1);
 	}
 	
 	public boolean isValid() {
-		//System.out.println("SJZ isValid " + toString() + " :::: " + (value != Table.NOTSEENYET_FIELD && value != Table.BLOCKED_FIELD));
-		return value != Table.NOTSEENYET_FIELD && value != Table.BLOCKED_FIELD;
+		return reachedInStepNumber != NOT_VISITED && reachedInStepNumber != BLOCKED;
 	}
 
-	public boolean isBlocked() {
-		return value != Table.BLOCKED_FIELD;
+	public boolean isNotBlocked() {
+		return reachedInStepNumber != BLOCKED;
+	}
+
+	public boolean isEndField() {
+		return isEndField;
+	}
+
+	public void setEndField(boolean isEndField) {
+		this.isEndField = isEndField;
 	}
 
 }

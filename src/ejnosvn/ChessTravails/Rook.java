@@ -10,47 +10,47 @@ public class Rook extends Chessman{
 	}
 
 	@Override
-	public List<Field> getValidMoves(int i, int j, boolean blockedOnly) {
+	public List<Field> getValidMoves(int startCol, int startRow, boolean blockedOnly) {
 		List<Field> retFields = new ArrayList<Field>();
-		for (int col = i+1; col < 8; col++) {
-			if( (!blockedOnly && t.getField(col,j).isValid())
+		for (int col = startCol+1; col < 8; col++) {
+			if( (!blockedOnly && t.getField(col,startRow).isValid())
 				||
-			    (blockedOnly && t.getField(col,j).isBlocked())){
-				retFields.add(t.getField(col, j));
+			    (blockedOnly && t.getField(col,startRow).isNotBlocked())){
+				retFields.add(t.getField(col, startRow));
 			} else {
 				break;
 			}
 		}
-		for (int col = i-1; col >= 0; col--) {
-			if( (!blockedOnly && t.getField(col,j).isValid())
+		for (int col = startCol-1; col >= 0; col--) {
+			if( (!blockedOnly && t.getField(col,startRow).isValid())
 			    ||
-			    (blockedOnly && t.getField(col,j).isBlocked())){
-				retFields.add(t.getField(col, j));
+			    (blockedOnly && t.getField(col,startRow).isNotBlocked())){
+				retFields.add(t.getField(col, startRow));
 			} else {
 				break;
 			}
 		}
 		
-		for (int row = j+1; row < 8; row++) {
-			if( (!blockedOnly && t.getField(i, row).isValid())
+		for (int row = startRow+1; row < 8; row++) {
+			if( (!blockedOnly && t.getField(startCol, row).isValid())
 				||
- 			    (blockedOnly && t.getField(i, row).isBlocked())){
-				retFields.add(t.getField(i, row));
+ 			    (blockedOnly && t.getField(startCol, row).isNotBlocked())){
+				retFields.add(t.getField(startCol, row));
 			} else {
 				break;
 			}
 		}
-		for (int row = j-1; row >= 0 ; row--) {
-			if( (!blockedOnly && t.getField(i, row).isValid())
+		for (int row = startRow-1; row >= 0 ; row--) {
+			if( (!blockedOnly && t.getField(startCol, row).isValid())
 				||
- 			    (blockedOnly && t.getField(i, row).isBlocked())){
-				retFields.add(t.getField(i, row));
+ 			    (blockedOnly && t.getField(startCol, row).isNotBlocked())){
+				retFields.add(t.getField(startCol, row));
 			} else {
 				break;
 			}
 		}
 
-		System.out.println("GetValidMoves for Rook:"+ t.getField(i,j).toString() + " :" + retFields.toString());
+		System.out.println("GetValidMoves for Rook:"+ t.getField(startCol,startRow).toString() + " :" + retFields.toString());
 		return retFields;
 	}
 	

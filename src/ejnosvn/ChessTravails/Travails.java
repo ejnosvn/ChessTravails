@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public abstract class Travails {
 	Chessman chessman = null;
 	Table t = null;
@@ -19,7 +20,7 @@ public abstract class Travails {
 			t.storeField(i,fields[i]);
 		}
 		
-		solveTable(Table.START_FIELD);
+		solveTable(Field.START);
 		t.writeTableToConsole();
 		String[] result = null;
 		result = getSolution(result);
@@ -33,13 +34,6 @@ public abstract class Travails {
 		for (int j = 0; j < 8; j++) {
 			for (int i = 0; i < 8; i++) {
 				if(t.getValueOfField(i,j) == startFrom){
-//					if(ret == false){
-//						//TODO ez itt rossz, csak bastyara megy, knightra nem
-//					  ret = t.setRow(i, j, whichStep);
-//					}
-//					if(ret == false){
-//					  ret = t.setColumn(i, j, whichStep);
-//					}
 					List<Field> fields = chessman.getValidMoves(i, j, true);
 					for (Field field : fields) {
 						if(ret == false){
@@ -61,7 +55,7 @@ public abstract class Travails {
 		
 		for (int j = 0; j < 8; j++) {
 			for (int i = 0; i < 8; i++) {
-				if(t.getField(i,j).endField == true){
+				if(t.getField(i,j).isEndField() == true){
 					results.add(t.getField(i,j).toString());
 					results = getValidMove( results, i, j);
 				}
@@ -83,19 +77,19 @@ public abstract class Travails {
 
 	private List<String> getValidMove( List<String> results, int i, int j) {
 		List<Field> fields = chessman.getValidMoves(i, j, false);
-		int smallestFieldNearby = Table.NOTSEENYET_FIELD;
+		int smallestFieldNearby = Field.NOT_VISITED;
 		Field smallestField = null;
 		boolean notReached = true;
 		for (Field field : fields) {
 			//System.out.println("Ezek kozul: " + field);
-			field.value = t.getValueOfField(field);
-			if( t.getValueOfField(field) == Table.START_FIELD ) {
+			field.reachedInStepNumber = t.getValueOfField(field);
+			if( t.getValueOfField(field) == Field.START ) {
 				notReached = false;
 			}
 			//System.out.println("Mi az ertek:: " + t.getValueOfField(field));
 			//System.out.println("Mi az smallestFieldNearby:: " + smallestFieldNearby);
 			if( t.getValueOfField(field) > 0 &&
-				(t.getValueOfField(field) < smallestFieldNearby || smallestFieldNearby == Table.NOTSEENYET_FIELD)){
+				(t.getValueOfField(field) < smallestFieldNearby || smallestFieldNearby == Field.NOT_VISITED)){
 				smallestFieldNearby = t.getValueOfField(field);
 				smallestField = field;
 			}
@@ -104,7 +98,7 @@ public abstract class Travails {
 		if(notReached && smallestField != null){
 			System.out.println("Erre megyunk tovabb: " + smallestField);
 			results.add(0, smallestField.toString());
-			results = getValidMove( results, smallestField.i, smallestField.j);
+			results = getValidMove( results, smallestField.column, smallestField.row);
 		} else if(notReached && smallestField == null){
 			results.clear();
 		}

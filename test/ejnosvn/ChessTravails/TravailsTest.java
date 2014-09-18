@@ -1,7 +1,6 @@
 package ejnosvn.ChessTravails;
 
 import org.testng.Assert;
-//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,25 +8,23 @@ import org.testng.annotations.Test;
 public class TravailsTest {
 	Travails rookTravails, knightTravails;
 	
-    //@BeforeClass
 	@BeforeMethod
     public void init() {
-        //System.out.println("@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.");
-		System.out.println("@BeforeMethod: The annotated method will be run before the each test method in the current class is invoked.");
-        System.out.println("init service");
+		//System.out.println("@BeforeMethod: The annotated method will be run before the each test method in the current class is invoked.");
+        //System.out.println("init service");
         rookTravails = new RookTravails();
         knightTravails = new KnightTravails();
     }
 
-    @Test(dataProvider = "testDatas1")
+    @Test(dataProvider = "testDatas_RookMoves")
     public void testRookTravails(String[][] a) {
-        System.out.println("@Test : rookTravails()");
+        //System.out.println("@Test : rookTravails()");
         String[] result = rookTravails.solve(a[0]);
         Assert.assertEquals(result, a[1]);
     }
 
     @DataProvider
-    public Object[][] testDatas1() {
+    public Object[][] testDatas_RookMoves() {
     	//test_RookOneSteps
     	String[][] e1 = { {"A2", "A7"}, {"A7"} };
 
@@ -49,7 +46,7 @@ public class TravailsTest {
         return new Object[][] { {e1}, {e2}, {e3}, {e4}, {e5}, {e6} };
     }
 
-    @Test(dataProvider = "testDatas2")
+    @Test(dataProvider = "testDatas_KnightMoves")
     public void testKnightTravails(String[][] a) {
         System.out.println("@Test : knightTravails()");
         String[] result = knightTravails.solve(a[0]);
@@ -58,7 +55,7 @@ public class TravailsTest {
 
     //todo kene lo meg futo is, konfigolhato modon
     @DataProvider
-    public Object[][] testDatas2() {
+    public Object[][] testDatas_KnightMoves() {
     	//test_KnightOneSteps
     	String[][] e1 = { {"A2", "B4"}, {"B4"} };
 
