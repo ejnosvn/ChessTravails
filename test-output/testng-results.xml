@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="117" started-at="2014-09-18T07:53:04Z" finished-at="2014-09-18T07:53:04Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="117" started-at="2014-09-18T07:53:04Z" finished-at="2014-09-18T07:53:04Z">
+      <class name="ejnosvn.ChessTravails.TravailsTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="4" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testKnightTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testKnightTravails" duration-ms="7" started-at="2014-09-18T09:53:04Z" data-provider="testDatas2" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@cde55ec]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testKnightTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="1" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testKnightTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testKnightTravails" duration-ms="4" started-at="2014-09-18T09:53:04Z" data-provider="testDatas2" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@58daff8d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testKnightTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="0" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="2" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@11bfaf8e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="1" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="3" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@3f9e9cbc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="5" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@46441b45]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="0" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="1" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="30" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@215a730d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="0" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="23" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@39376b96]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="init" is-config="true" duration-ms="1" started-at="2014-09-18T09:53:04Z" finished-at="2014-09-18T09:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testRookTravails([[Ljava.lang.String;)[pri:0, instance:ejnosvn.ChessTravails.TravailsTest@71846ce0]" name="testRookTravails" duration-ms="18" started-at="2014-09-18T09:53:04Z" data-provider="testDatas1" finished-at="2014-09-18T09:53:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@65786232]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRookTravails -->
+      </class> <!-- ejnosvn.ChessTravails.TravailsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
