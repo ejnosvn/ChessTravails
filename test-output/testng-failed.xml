@@ -5,8 +5,7 @@
     <classes>
       <class name="ejnosvn.ChessTravails.TravailsTest">
         <methods>
-          <include name="testKnightTravails" invocation-numbers="1"/>
-          <include name="testRookTravails" invocation-numbers="0 1 2 3"/>
+          <include name="testKnightTravails" invocation-numbers="0"/>
           <include name="init"/>
         </methods>
       </class> <!-- ejnosvn.ChessTravails.TravailsTest -->

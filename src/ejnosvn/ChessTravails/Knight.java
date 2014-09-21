@@ -32,7 +32,7 @@ public class Knight extends Chessman {
 			}
 		}
 
-		System.out.println("GetValidMoves for Knight:"+ t.getField(startCol,startRow).toString() + " :" + retFields.toString());
+//		System.out.println("GetValidMoves for Knight:"+ t.getField(startCol,startRow).toString() + " :" + retFields.toString());
 		return retFields;
 	}
 

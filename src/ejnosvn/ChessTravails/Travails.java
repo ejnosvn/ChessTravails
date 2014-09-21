@@ -24,6 +24,7 @@ public abstract class Travails {
 		t.writeTableToConsole();
 		String[] result = null;
 		result = getSolution(result);
+		System.out.println("Result fields: " + result);
 		return result;
 	}
 
@@ -37,7 +38,6 @@ public abstract class Travails {
 					List<Field> fields = chessman.getValidMoves(i, j, true);
 					for (Field field : fields) {
 						if(ret == false){
-							System.out.println("Milyen fieldet setelunk:: " + field.toString());
 							ret = t.setField(field, whichStep);
 						}
 					}
