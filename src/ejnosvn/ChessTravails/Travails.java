@@ -34,7 +34,7 @@ public abstract class Travails {
 		for (int j = 0; j < 8; j++) {
 			for (int i = 0; i < 8; i++) {
 				if (t.getValueOfField(i, j) == startFrom) {
-					List<Field> fields = chessman.getNotBlockedMoves(i, j);
+					List<Field> fields = chessman.getValidMoves(i, j, new CheckIsNotBlockedCommand());
 					for (Field field : fields) {
 						if (ret == false) {
 							ret = t.setField(field, whichStep);
@@ -75,12 +75,11 @@ public abstract class Travails {
 	}
 
 	private List<String> getValidMove(List<String> results, int i, int j) {
-		List<Field> fields = chessman.getValidMoves(i, j);
+		List<Field> fields = chessman.getValidMoves(i, j, new CheckIsValidCommand());
 		int smallestFieldNearby = Field.NOT_VISITED;
 		Field smallestField = null;
 		boolean notReached = true;
 		for (Field field : fields) {
-			//System.out.println("Ezek kozul: " + field);
 			field.reachedInStepNumber = t.getValueOfField(field);
 			if (t.getValueOfField(field) == Field.START) {
 				notReached = false;

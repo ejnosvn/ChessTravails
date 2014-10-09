@@ -27,6 +27,10 @@ public class Field {
 		return reachedInStepNumber != BLOCKED;
 	}
 
+	public boolean isNotVisited() {
+        return reachedInStepNumber == NOT_VISITED;
+    }
+	
 	public boolean isEndField() {
 		return isEndField;
 	}
@@ -35,4 +39,7 @@ public class Field {
 		this.isEndField = isEndField;
 	}
 
+    public interface FieldCommand {
+        public boolean execute(Field field);
+    }
 }

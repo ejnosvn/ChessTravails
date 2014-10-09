@@ -2,6 +2,8 @@ package ejnosvn.ChessTravails;
 
 import java.util.List;
 
+import ejnosvn.ChessTravails.Field.FieldCommand;
+
 public abstract class Chessman {
 	Table t = null;
 
@@ -9,15 +11,10 @@ public abstract class Chessman {
 		this.t = t;
 	}
 
-	public abstract List<Field> getValidMoves(int startCol, int startRow);
+	public abstract List<Field> getValidMoves(int startCol, int startRow, FieldCommand fc);
 
-	public abstract List<Field> getNotBlockedMoves(int startCol, int startRow);
-
-	public List<Field> getValidMoves(Field f, boolean blockedOnly) {
-		return getValidMoves(f.column, f.row);
+	public List<Field> getValidMoves(Field f, boolean blockedOnly, FieldCommand fc) {
+		return getValidMoves(f.column, f.row, fc);
 	}
 
-	public List<Field> getNotBlockedMoves(Field f) {
-		return getValidMoves(f.column, f.row);
-	}
 }
