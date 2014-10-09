@@ -33,7 +33,7 @@ public abstract class Travails {
 		boolean ret = false;
 		for (int j = 0; j < 8; j++) {
 			for (int i = 0; i < 8; i++) {
-				if (t.getValueOfField(i, j) == startFrom) {
+				if (t.getField(i, j).getValue() == startFrom) {
 					List<Field> fields = chessman.getValidMoves(i, j, new CheckIsNotBlockedCommand());
 					for (Field field : fields) {
 						if (ret == false) {
@@ -80,15 +80,15 @@ public abstract class Travails {
 		Field smallestField = null;
 		boolean notReached = true;
 		for (Field field : fields) {
-			field.reachedInStepNumber = t.getValueOfField(field);
-			if (t.getValueOfField(field) == Field.START) {
+			field.reachedInStepNumber = field.getValue();
+			if (field.isStartField()) {
 				notReached = false;
 			}
-			//System.out.println("Mi az ertek:: " + t.getValueOfField(field));
+			//System.out.println("Mi az ertek:: " + field.getValue());
 			//System.out.println("Mi az smallestFieldNearby:: " + smallestFieldNearby);
-			if (t.getValueOfField(field) > 0
-					&& (t.getValueOfField(field) < smallestFieldNearby || smallestFieldNearby == Field.NOT_VISITED)) {
-				smallestFieldNearby = t.getValueOfField(field);
+			if (field.getValue() > 0
+					&& (field.getValue() < smallestFieldNearby || smallestFieldNearby == Field.NOT_VISITED)) {
+				smallestFieldNearby = field.getValue();
 				smallestField = field;
 			}
 		}

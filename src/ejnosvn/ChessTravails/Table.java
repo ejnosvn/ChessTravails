@@ -31,7 +31,7 @@ public class Table {
 		boolean ret = false;
 		for (int j = 0; j < 8; j++) {
 			for (int i = 0; i < 8; i++) {
-				if(getValueOfField(i,j)  == Field.NOT_VISITED){
+				if(getField(i,j).isNotVisited()){
 					ret = true;
 					break;
 				}
@@ -42,7 +42,7 @@ public class Table {
 
 	public boolean setField(Field f, int whichStep) {
 		boolean ret = false;
-		if(getValueOfField(f.column,f.row) == Field.NOT_VISITED){
+		if(getField(f.column,f.row).isNotVisited()){
 			setValueOfField(f.column,f.row, whichStep);
 		}
 		if(getField(f.column,f.row).isEndField() == true){
@@ -54,10 +54,10 @@ public class Table {
 	public boolean setColumn(int fromX, int fromY, int whichStep) {
 		boolean ret = false;
 		for (int i = fromY; i < 8; i++) {
-			if(getValueOfField(fromX,i) == Field.NOT_VISITED){
+			if(getField(fromX,i).isNotVisited()){
 				setValueOfField(fromX, i, whichStep);
 			}
-			if(getValueOfField(fromX,i) == Field.BLOCKED){
+			if(!getField(fromX,i).isNotBlocked()){
 				break;
 			}
 			if(getField(fromX,i).isEndField() == true){
@@ -66,10 +66,10 @@ public class Table {
 			}
 		}
 		for (int i = fromY; i >= 0; i--) {
-			if(getValueOfField(fromX,i) == Field.NOT_VISITED){
+			if(getField(fromX,i).isNotVisited()){
 				setValueOfField(fromX, i, whichStep);
 			}
-			if(getValueOfField(fromX,i) == Field.BLOCKED){
+			if(!getField(fromX,i).isNotBlocked()){
 				break;
 			}
 			if(getField(fromX,i).isEndField() == true){
@@ -83,10 +83,10 @@ public class Table {
 	public boolean setRow(int fromX, int fromY, int whichStep) {
 		boolean ret = false;
 		for (int i = fromX; i < 8; i++) {
-			if(getValueOfField(i, fromY) == Field.NOT_VISITED){
+			if(getField(i, fromY).isNotVisited()){
 				setValueOfField(i, fromY, whichStep);
 			}
-			if(getValueOfField(i, fromY) == Field.BLOCKED){
+			if(!getField(i,fromY).isNotBlocked()){
 				break;
 			}
 			if(getField(i, fromY).isEndField() == true){
@@ -95,10 +95,10 @@ public class Table {
 			}
 		}
 		for (int i = fromX; i >= 0; i--) {
-			if(getValueOfField(i, fromY) == Field.NOT_VISITED){
+			if(getField(i, fromY).isNotVisited()){
 				setValueOfField(i, fromY, whichStep);
 			}
-			if(getValueOfField(i, fromY) == Field.BLOCKED){
+			if(!getField(i,fromY).isNotBlocked()){
 				break;
 			}
 			if(getField(i, fromY).isEndField() == true){
@@ -107,15 +107,6 @@ public class Table {
 			}
 		}
 		return ret;
-	}
-	
-	
-	public int getValueOfField(int i, int j){
-		return table[i][j].reachedInStepNumber;
-	}
-
-	public int getValueOfField(Field f){
-		return table[f.column][f.row].reachedInStepNumber;
 	}
 	
 	public void setValueOfField(int i, int j, int state) {
@@ -135,14 +126,14 @@ public class Table {
 		for (int j = 0; j < 8; j++) {
 			String row = "" + (j+1) + " ";
 			for (int i = 0; i < 8; i++) {
-				if(getValueOfField(i,j)  > -1){
+				if(getField(i,j).getValue()  > -1){
 					if(getField(i,j).isValid() == true){
-						row += " " + getValueOfField(i,j)  + " ";
+						row += " " + getField(i,j).getValue()  + " ";
 					} else {
 						row += " X ";
 					}
 				} else {
-					row += getValueOfField(i,j)  + " ";
+					row += getField(i,j).getValue()  + " ";
 				}
 			}
 			System.out.println(row);

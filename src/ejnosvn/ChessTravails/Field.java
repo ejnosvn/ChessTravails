@@ -31,12 +31,20 @@ public class Field {
         return reachedInStepNumber == NOT_VISITED;
     }
 	
-	public boolean isEndField() {
-		return isEndField;
+	public boolean isStartField() {
+		return reachedInStepNumber == START;
 	}
 
+	public boolean isEndField() {
+	    return isEndField;
+	}
+	
 	public void setEndField(boolean isEndField) {
 		this.isEndField = isEndField;
+	}
+
+	public int getValue(){
+	    return reachedInStepNumber;
 	}
 
     public interface FieldCommand {
